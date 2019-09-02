@@ -18,7 +18,7 @@ jobs:
         with:
           java-version: ${{ matrix.jdk_version }}
 
-      - name: Build and Test, verify with Maven
+      - name: Maven package, test and verify
         run: |
           mvn package --file pom.xml
           mvn test
