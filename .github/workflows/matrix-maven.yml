@@ -1,0 +1,24 @@
+name: Java CI
+
+on: [push]
+
+jobs:
+  test:
+    name: Test on jdk ${{ matrix.jdk_version }} and ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    storategy:
+      matrix:
+        jdk_version: [1.8, 1.11]
+        os: [ubuntu-latest, windows-latest, macOS-latest]
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use JDK {{ matrix.jdk_version }}
+        uses: actions/setup-java@v1
+        with:
+          java-version: {{ matrix.jdk_version }}
+
+      - name: Build with Maven
+        run: |
+          mvn package --file pom.xml
+          mvn verify
