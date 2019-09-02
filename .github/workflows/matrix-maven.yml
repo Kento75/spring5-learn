@@ -6,7 +6,7 @@ jobs:
   test:
     name: Test on jdk ${{ matrix.jdk_version }} and ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
-    storategy:
+    strategy:
       matrix:
         jdk_version: [1.8, 1.11]
         os: [ubuntu-latest, windows-latest, macOS-latest]
