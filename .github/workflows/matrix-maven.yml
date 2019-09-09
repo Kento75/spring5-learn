@@ -18,11 +18,8 @@ jobs:
         with:
           java-version: ${{ matrix.jdk_version }}
 
-      - name: Maven package
-        run: mvn package --file pom.xml
-
-      - name: Maven test
-        run: mvn test
-
-      - name: Maven verify
-        run: mvn verify
+      - name: Maven package, test and verify
+        run: |
+          mvn package --file pom.xml
+          mvn test
+          mvn verify
