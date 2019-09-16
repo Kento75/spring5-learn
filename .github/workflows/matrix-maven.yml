@@ -22,4 +22,4 @@ jobs:
         run: |
           mvn package --file pom.xml
           mvn test
-          mvn verify
+#          mvn verify
