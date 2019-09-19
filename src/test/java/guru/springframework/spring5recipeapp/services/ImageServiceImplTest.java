@@ -35,7 +35,7 @@ public class ImageServiceImplTest {
         // given
         Long id = 1L;
         MultipartFile multipartFile = new MockMultipartFile(
-                "iamgefile",
+                "imagefile",
                 "testing.txt",
                 "text/plain",
                 "Spring Framework Guru".getBytes());
